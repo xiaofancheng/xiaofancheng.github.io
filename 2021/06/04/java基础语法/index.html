@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/project/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/project/images/blog32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/project/images/blog16.png">
+  <link rel="mask-icon" href="/project/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/project/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/project/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xiaofancheng.github.io","root":"/project/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="注释平时我们在编写时，在代码量比较少的时候，我们还可以看懂自己的代码，但是当项目结构一旦复杂起来，我们就需要用到注释，注释就类似于我们上学时候写的笔记，看着笔记就知道自己写的什么东西了！在程序中也是如此。下面代码就是Java中的注释：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础语法">
+<meta property="og:url" content="https://xiaofancheng.github.io/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="sail&#39;s 学习笔记">
+<meta property="og:description" content="注释平时我们在编写时，在代码量比较少的时候，我们还可以看懂自己的代码，但是当项目结构一旦复杂起来，我们就需要用到注释，注释就类似于我们上学时候写的笔记，看着笔记就知道自己写的什么东西了！在程序中也是如此。下面代码就是Java中的注释：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaofancheng.github.io/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog/source_posts/java基础语法.assets/image-20210604201438853.png">
+<meta property="og:image" content="https://xiaofancheng.github.io/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog/source_posts/java基础语法.assets/image-20210604201548745.png">
+<meta property="og:image" content="https://xiaofancheng.github.io/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog/source_posts/java基础语法.assets/image-20210604203643996.png">
+<meta property="og:image" content="https://xiaofancheng.github.io/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog/source_posts/java基础语法.assets/image-20210604203817866.png">
+<meta property="article:published_time" content="2021-06-04T11:52:54.000Z">
+<meta property="article:modified_time" content="2021-06-04T12:59:20.646Z">
+<meta property="article:author" content="sail">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaofancheng.github.io/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog/source_posts/java基础语法.assets/image-20210604201438853.png">
+
+<link rel="canonical" href="https://xiaofancheng.github.io/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>java基础语法 | sail's 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/project/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">sail's 学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">苦逼程序员</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/project/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/project/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/project/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/project/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/project/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/xiaofancheng" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiaofancheng.github.io/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/project/images/avatar.jpg">
+      <meta itemprop="name" content="sail">
+      <meta itemprop="description" content="即使再小的帆也能远航">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sail's 学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java基础语法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-04 19:52:54 / 修改时间：20:59:20" itemprop="dateCreated datePublished" datetime="2021-06-04T19:52:54+08:00">2021-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/project/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>平时我们在编写时，在代码量比较少的时候，我们还可以看懂自己的代码，但是当项目结构一旦复杂起来，我们就需要用到注释，注释就类似于我们上学时候写的笔记，看着笔记就知道自己写的什么东西了！在程序中也是如此。下面代码就是Java中的注释：</p>
+<span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;sail967642@gmail.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/6/4 19:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        这是Java程序的主入口，</span></span><br><span class="line"><span class="comment">        main方法也是程序的主线程</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 输出Hello, world!</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注释并不会被执行，是给写代码的人看的，书写注释是一个非常好的习惯，在很多大公司都是强制要求编写注释！比如，BAT三巨头等等。。。</p>
+<p>Java中的注释有三种：</p>
+<p>单行注释：只能注释当前行，以//开始，直到行结束</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输出Hello, world!</span></span><br></pre></td></tr></table></figure>
+
+<p>多行注释：注释一段文字，以/*开始，*/结束！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">        这是Java程序的主入口，</span></span><br><span class="line"><span class="comment">        main方法也是程序的主线程</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>文档注释：用于生产API文档，配合JavaDoc。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;sail967642@gmail.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/6/4 19:56</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>平时写代码一定要注意注释的规范性，一个好的程序员，一定是有非常良好的编码习惯。</p>
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>每个人出生开始就有一个名字，生活中的所有事物都有名字，这名字是由造物主规定的，在程序中也不例外，谁生产出来的谁就规定名字。</p>
+<p>我们作为造物主，需要给所有的东西给上一个名字，比如我们的HelloWorld程序：</p>
+<p>HelloWorld是类名，也是我们的文件名。它前面的public class是关键字，不过是搞Java的人已经定好有特殊作用的，下面的每一个代码都有自己的意思和名字，就是用来区分的！和我们的名字一样，拿来被叫或者称呼的，程序一切都源于生活，一定要把学程序和生活中的一切联系起来，你会发现这一切都是息息相关的。</p>
+<p><img src="/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604201438853.png" alt="image-20210604201438853"></p>
+<p>下面是Java自己定义好的关键字：</p>
+<p><img src="/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604201548745.png" alt="image-20210604201548745"></p>
+<p>这些被Java已经规定的关键字，就不能拿来当作名字！</p>
+<p>Java所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
+<p>我们起名的要求：</p>
+<p>表示类名的标识符用大写字符开始。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如：Man，GoodMan</span><br></pre></td></tr></table></figure>
+
+<p>表示方法和变量的标识符用小写字母开始，后面的描述性词以大写开始。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如：eat(),eatFood()</span><br><span class="line"><span class="comment">//驼峰命名法</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>关于Java标识符，有以下几点需要注意：</strong></p>
+<ul>
+<li>所有的标识符都应该以字母（A-Z或者a-z）、美元符（$）、或者下划线（_）开始</li>
+<li>首字符之后可以是字母（A-Z或者a-z）、美元符（$）、下划线（_）或者数字的任何字符组合</li>
+<li>不能使用关键字作为变量名或方法名</li>
+<li>标识符是大小写敏感的</li>
+<li>合法标识符举例：age、$salary、_value、__1_value</li>
+<li>非法标识符举例：123abc、-salary、#abc</li>
+</ul>
+<p>【JAVA不采用通用语言使用的ASCII字符集，而是采用unicode这样的标准的国际字符集。因此，这里的字母的含义：可以表示英文、汉子等等。】</p>
+<p>【可以使用中文命名，但是一般不建议这样使用，也不建议使用拼音，很Low】</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String 王者荣耀 = <span class="string">&quot;最强王者&quot;</span>;</span><br><span class="line">        System.out.println(王者荣耀);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Java是一种<strong>强类型语言</strong>，每个变量都必须声明其类型。</p>
+<h2 id="1、强弱类型语言"><a href="#1、强弱类型语言" class="headerlink" title="1、强弱类型语言"></a>1、强弱类型语言</h2><p><strong>强类型语言</strong>也被称为强类型定义语言。要求变量的使用要严格符合规定，所有变量都必须先定义才能使用。</p>
+<p>Java、,NET、C++等都是强制类型定义的。也就是说，一旦一个变量被指定了某个数据类型，如果不经过转换，那么它就永远是这个数据类型了。</p>
+<p>安全性高，运行效率相对较慢，鱼和熊掌不可兼得！强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。</p>
+<p>在VBScript中，可以将字符串‘12’和整数3进行连接得到字符串‘123’，也可以把它看成整数123，而不需要显示转换。十分随便</p>
+<p> 但其实它们的类型没有改变，VB只是在判断出一个表达式含有不同类型的变量之后，自动在这些变量前加了一个clong（）或（int）（）这样的转换函数而已。能做到这一点其实是归功于VB的编译器的 智能化而已，这并非是VB语言本身的长处或短处。</p>
+<h2 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h2><p>Java数据类型分为两大类：基本类型（primitive type）和引用类型（reference type）</p>
+<p><img src="/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604203643996.png" alt="image-20210604203643996"></p>
+<p>【注：引用数据类型的大小统一为4个字节，记录的是其引用对象的地址！】</p>
+<p><img src="/project/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604203817866.png" alt="image-20210604203817866"></p>
+<p>JDK中类型对应的包装类都写好了，需要用到的时候直接看到。下面代码进行查看：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// byte</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：byte 二进制位数：&quot;</span> + Byte.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Byte&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Byte.MIN_VALUE=&quot;</span> + Byte.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Byte.MAX_VALUE=&quot;</span> + Byte.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// short</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：short 二进制位数：&quot;</span> + Short.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Short&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Short.MIN_VALUE=&quot;</span> + Short.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Short.MAX_VALUE=&quot;</span> + Short.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// int</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：int 二进制位数：&quot;</span> + Integer.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Integer.MIN_VALUE=&quot;</span> + Integer.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Integer.MAX_VALUE=&quot;</span> + Integer.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// long</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：long 二进制位数：&quot;</span> + Long.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Long&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Long.MIN_VALUE=&quot;</span> + Long.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Long.MAX_VALUE=&quot;</span> + Long.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// float</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：float 二进制位数：&quot;</span> + Float.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Float&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Float.MIN_VALUE=&quot;</span> + Float.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Float.MAX_VALUE=&quot;</span> + Float.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// double</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：double 二进制位数：&quot;</span> + Double.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Double&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Double.MIN_VALUE=&quot;</span> + Double.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Double.MAX_VALUE=&quot;</span> + Double.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// char</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：char 二进制位数：&quot;</span> + Character.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Character&quot;</span>);</span><br><span class="line">        <span class="comment">// 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台</span></span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Character.MIN_VALUE=&quot;</span> + (<span class="keyword">int</span>) Character.MIN_VALUE);</span><br><span class="line">        <span class="comment">// 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台</span></span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Character.MAX_VALUE=&quot;</span> + (<span class="keyword">int</span>) Character.MAX_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Integer&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>字节是什么：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">位（bit）：是计算机 内部数据 储存的最小单位，11001100是一个八位二进制数。</span><br><span class="line">字节（byte）：是计算机中 数据处理 的基本单位，习惯上用大写 B 来表示, 1B（byte,字节）= 8bit（位）</span><br><span class="line">字符：是指计算机中使用的字母、数字、字和符号</span><br><span class="line">ASCIIS码： </span><br><span class="line">	1个英文字母（不分大小写）= 1个字节的空间</span><br><span class="line">	1个中文汉字 = 2个字节的空间</span><br><span class="line">	1个ASCII码 = 一个字节</span><br><span class="line">UTF-8编码： </span><br><span class="line">	1个英文字符 = 1个字节</span><br><span class="line">	英文标点 = 1个字节 </span><br><span class="line">	1个中文（含繁体） = 3个字节</span><br><span class="line">	中文标点 = 3个字节</span><br><span class="line">Unicode编码： </span><br><span class="line">	1个英文字符 = 2个字节</span><br><span class="line">	英文标点 = 2个字节</span><br><span class="line">	1个中文（含繁体） = 2个字节</span><br><span class="line">	中文标点 = 2个字节</span><br><span class="line">	</span><br><span class="line">	1bit表示1位</span><br><span class="line">	1Byte表示一个字节 1B=8b</span><br><span class="line">	1024B=1KB</span><br><span class="line">	1024KB=1M</span><br><span class="line">	1024M=1G</span><br></pre></td></tr></table></figure>
+
+<p>【下面，自己定义一些变量来看】</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 整数</span></span><br><span class="line">    <span class="keyword">int</span> i1 = <span class="number">100</span>;</span><br><span class="line">    <span class="comment">// 长整数</span></span><br><span class="line">    <span class="keyword">long</span> i2 = <span class="number">998877665544332211L</span>;</span><br><span class="line">    <span class="comment">// 短整数</span></span><br><span class="line">    <span class="keyword">short</span> i3 = <span class="number">235</span>;</span><br><span class="line">    <span class="comment">// 浮点型</span></span><br><span class="line">    <span class="keyword">double</span> d1 = <span class="number">3.5</span>; <span class="comment">// 双精度</span></span><br><span class="line">    <span class="keyword">double</span> d2 = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">float</span> f1 = (<span class="keyword">float</span>) <span class="number">3.5</span>; <span class="comment">// 单精度</span></span><br><span class="line">    <span class="keyword">float</span> f2 = <span class="number">3.5f</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 布尔类型 boolean true真/false假</span></span><br><span class="line">    <span class="keyword">boolean</span> isPass = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isOK = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isBig = <span class="number">5</span> &gt; <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">if</span> (isPass) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;通过了&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;未通过&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 单字符</span></span><br><span class="line">    <span class="keyword">char</span> f = <span class="string">&#x27;女&#x27;</span>;</span><br><span class="line">    <span class="keyword">char</span> m = <span class="string">&#x27;男&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【Java语言的整型常数默认为int型，浮点数默认是Double】</p>
+<h2 id="3、整型拓展"><a href="#3、整型拓展" class="headerlink" title="3、整型拓展"></a>3、整型拓展</h2><p>在计算机中存在很多进制问题，十进制，八进制，十六进制等，它们是如何表示的？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">十进制整数，如：99, -500, 0。</span><br><span class="line"></span><br><span class="line">八进制整数，要求以 0 开头，如：015</span><br><span class="line"></span><br><span class="line">十六进制数，要求 0x 或 0X 开头，如：0x15 。</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//整型</span></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> i2=<span class="number">010</span>;</span><br><span class="line"><span class="keyword">int</span> i3=<span class="number">0x10</span>;</span><br><span class="line">System.out.println(i); <span class="comment">//10</span></span><br><span class="line">System.out.println(i2); <span class="comment">//8</span></span><br><span class="line">System.out.println(i3); <span class="comment">//16</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>sail
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xiaofancheng.github.io/project/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" title="java基础语法">https://xiaofancheng.github.io/project/2021/06/04/java基础语法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/project/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/project/2021/06/04/my-first-blog/" rel="prev" title="my first blog">
+      <i class="fa fa-chevron-left"></i> my first blog
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%BC%BA%E5%BC%B1%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="nav-text">1、强弱类型语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">2、数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E6%95%B4%E5%9E%8B%E6%8B%93%E5%B1%95"><span class="nav-text">3、整型拓展</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="sail"
+      src="/project/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">sail</p>
+  <div class="site-description" itemprop="description">即使再小的帆也能远航</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/project/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/project/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/project/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaofancheng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaofancheng" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sail967642@gmail.com" title="E-Mail → mailto:sail967642@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+<script type="text/javascript" charset="utf-8" src="/project/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/project/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a><span class="tag-list-count">1</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
+
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sail</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6 分钟</span>
+</div><span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("06/04/2021 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+}
+setInterval("createtime()",250);
+</script>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/project/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/project/lib/velocity/velocity.min.js"></script>
+  <script src="/project/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/project/js/utils.js"></script>
+
+<script src="/project/js/motion.js"></script>
+
+
+<script src="/project/js/schemes/pisces.js"></script>
+
+
+<script src="/project/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/project/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <script async src="/project/js/cursor/fireworks.js"></script>
+
+</body>
+</html>
