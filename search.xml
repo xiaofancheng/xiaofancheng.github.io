@@ -1,91 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>java基础语法</title>
-    <url>/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>平时我们在编写时，在代码量比较少的时候，我们还可以看懂自己的代码，但是当项目结构一旦复杂起来，我们就需要用到注释，注释就类似于我们上学时候写的笔记，看着笔记就知道自己写的什么东西了！在程序中也是如此。下面代码就是Java中的注释：</p>
-<span id="more"></span>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;sail967642@gmail.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/6/4 19:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        这是Java程序的主入口，</span></span><br><span class="line"><span class="comment">        main方法也是程序的主线程</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 输出Hello, world!</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注释并不会被执行，是给写代码的人看的，书写注释是一个非常好的习惯，在很多大公司都是强制要求编写注释！比如，BAT三巨头等等。。。</p>
-<p>Java中的注释有三种：</p>
-<p>单行注释：只能注释当前行，以//开始，直到行结束</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 输出Hello, world!</span></span><br></pre></td></tr></table></figure>
-
-<p>多行注释：注释一段文字，以/*开始，*/结束！</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">        这是Java程序的主入口，</span></span><br><span class="line"><span class="comment">        main方法也是程序的主线程</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<p>文档注释：用于生产API文档，配合JavaDoc。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;sail967642@gmail.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/6/4 19:56</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<p>平时写代码一定要注意注释的规范性，一个好的程序员，一定是有非常良好的编码习惯。</p>
-<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>每个人出生开始就有一个名字，生活中的所有事物都有名字，这名字是由造物主规定的，在程序中也不例外，谁生产出来的谁就规定名字。</p>
-<p>我们作为造物主，需要给所有的东西给上一个名字，比如我们的HelloWorld程序：</p>
-<p>HelloWorld是类名，也是我们的文件名。它前面的public class是关键字，不过是搞Java的人已经定好有特殊作用的，下面的每一个代码都有自己的意思和名字，就是用来区分的！和我们的名字一样，拿来被叫或者称呼的，程序一切都源于生活，一定要把学程序和生活中的一切联系起来，你会发现这一切都是息息相关的。</p>
-<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604201438853.png" alt="image-20210604201438853"></p>
-<p>下面是Java自己定义好的关键字：</p>
-<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604201548745.png" alt="image-20210604201548745"></p>
-<p>这些被Java已经规定的关键字，就不能拿来当作名字！</p>
-<p>Java所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
-<p>我们起名的要求：</p>
-<p>表示类名的标识符用大写字符开始。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">如：Man，GoodMan</span><br></pre></td></tr></table></figure>
-
-<p>表示方法和变量的标识符用小写字母开始，后面的描述性词以大写开始。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">如：eat(),eatFood()</span><br><span class="line"><span class="comment">//驼峰命名法</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>关于Java标识符，有以下几点需要注意：</strong></p>
-<ul>
-<li>所有的标识符都应该以字母（A-Z或者a-z）、美元符（$）、或者下划线（_）开始</li>
-<li>首字符之后可以是字母（A-Z或者a-z）、美元符（$）、下划线（_）或者数字的任何字符组合</li>
-<li>不能使用关键字作为变量名或方法名</li>
-<li>标识符是大小写敏感的</li>
-<li>合法标识符举例：age、$salary、_value、__1_value</li>
-<li>非法标识符举例：123abc、-salary、#abc</li>
-</ul>
-<p>【JAVA不采用通用语言使用的ASCII字符集，而是采用unicode这样的标准的国际字符集。因此，这里的字母的含义：可以表示英文、汉子等等。】</p>
-<p>【可以使用中文命名，但是一般不建议这样使用，也不建议使用拼音，很Low】</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String 王者荣耀 = <span class="string">&quot;最强王者&quot;</span>;</span><br><span class="line">        System.out.println(王者荣耀);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Java是一种<strong>强类型语言</strong>，每个变量都必须声明其类型。</p>
-<h2 id="1、强弱类型语言"><a href="#1、强弱类型语言" class="headerlink" title="1、强弱类型语言"></a>1、强弱类型语言</h2><p><strong>强类型语言</strong>也被称为强类型定义语言。要求变量的使用要严格符合规定，所有变量都必须先定义才能使用。</p>
-<p>Java、,NET、C++等都是强制类型定义的。也就是说，一旦一个变量被指定了某个数据类型，如果不经过转换，那么它就永远是这个数据类型了。</p>
-<p>安全性高，运行效率相对较慢，鱼和熊掌不可兼得！强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。</p>
-<p>在VBScript中，可以将字符串‘12’和整数3进行连接得到字符串‘123’，也可以把它看成整数123，而不需要显示转换。十分随便</p>
-<p> 但其实它们的类型没有改变，VB只是在判断出一个表达式含有不同类型的变量之后，自动在这些变量前加了一个clong（）或（int）（）这样的转换函数而已。能做到这一点其实是归功于VB的编译器的 智能化而已，这并非是VB语言本身的长处或短处。</p>
-<h2 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h2><p>Java数据类型分为两大类：基本类型（primitive type）和引用类型（reference type）</p>
-<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604203643996.png" alt="image-20210604203643996"></p>
-<p>【注：引用数据类型的大小统一为4个字节，记录的是其引用对象的地址！】</p>
-<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604203817866.png" alt="image-20210604203817866"></p>
-<p>JDK中类型对应的包装类都写好了，需要用到的时候直接看到。下面代码进行查看：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// byte</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：byte 二进制位数：&quot;</span> + Byte.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Byte&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Byte.MIN_VALUE=&quot;</span> + Byte.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Byte.MAX_VALUE=&quot;</span> + Byte.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// short</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：short 二进制位数：&quot;</span> + Short.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Short&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Short.MIN_VALUE=&quot;</span> + Short.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Short.MAX_VALUE=&quot;</span> + Short.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// int</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：int 二进制位数：&quot;</span> + Integer.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Integer.MIN_VALUE=&quot;</span> + Integer.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Integer.MAX_VALUE=&quot;</span> + Integer.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// long</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：long 二进制位数：&quot;</span> + Long.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Long&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Long.MIN_VALUE=&quot;</span> + Long.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Long.MAX_VALUE=&quot;</span> + Long.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// float</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：float 二进制位数：&quot;</span> + Float.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Float&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Float.MIN_VALUE=&quot;</span> + Float.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Float.MAX_VALUE=&quot;</span> + Float.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// double</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：double 二进制位数：&quot;</span> + Double.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Double&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Double.MIN_VALUE=&quot;</span> + Double.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Double.MAX_VALUE=&quot;</span> + Double.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// char</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：char 二进制位数：&quot;</span> + Character.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Character&quot;</span>);</span><br><span class="line">        <span class="comment">// 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台</span></span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Character.MIN_VALUE=&quot;</span> + (<span class="keyword">int</span>) Character.MIN_VALUE);</span><br><span class="line">        <span class="comment">// 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台</span></span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Character.MAX_VALUE=&quot;</span> + (<span class="keyword">int</span>) Character.MAX_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Integer&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>字节是什么：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">位（bit）：是计算机 内部数据 储存的最小单位，11001100是一个八位二进制数。</span><br><span class="line">字节（byte）：是计算机中 数据处理 的基本单位，习惯上用大写 B 来表示, 1B（byte,字节）= 8bit（位）</span><br><span class="line">字符：是指计算机中使用的字母、数字、字和符号</span><br><span class="line">ASCIIS码： </span><br><span class="line">	1个英文字母（不分大小写）= 1个字节的空间</span><br><span class="line">	1个中文汉字 = 2个字节的空间</span><br><span class="line">	1个ASCII码 = 一个字节</span><br><span class="line">UTF-8编码： </span><br><span class="line">	1个英文字符 = 1个字节</span><br><span class="line">	英文标点 = 1个字节 </span><br><span class="line">	1个中文（含繁体） = 3个字节</span><br><span class="line">	中文标点 = 3个字节</span><br><span class="line">Unicode编码： </span><br><span class="line">	1个英文字符 = 2个字节</span><br><span class="line">	英文标点 = 2个字节</span><br><span class="line">	1个中文（含繁体） = 2个字节</span><br><span class="line">	中文标点 = 2个字节</span><br><span class="line">	</span><br><span class="line">	1bit表示1位</span><br><span class="line">	1Byte表示一个字节 1B=8b</span><br><span class="line">	1024B=1KB</span><br><span class="line">	1024KB=1M</span><br><span class="line">	1024M=1G</span><br></pre></td></tr></table></figure>
-
-<p>【下面，自己定义一些变量来看】</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 整数</span></span><br><span class="line">    <span class="keyword">int</span> i1 = <span class="number">100</span>;</span><br><span class="line">    <span class="comment">// 长整数</span></span><br><span class="line">    <span class="keyword">long</span> i2 = <span class="number">998877665544332211L</span>;</span><br><span class="line">    <span class="comment">// 短整数</span></span><br><span class="line">    <span class="keyword">short</span> i3 = <span class="number">235</span>;</span><br><span class="line">    <span class="comment">// 浮点型</span></span><br><span class="line">    <span class="keyword">double</span> d1 = <span class="number">3.5</span>; <span class="comment">// 双精度</span></span><br><span class="line">    <span class="keyword">double</span> d2 = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">float</span> f1 = (<span class="keyword">float</span>) <span class="number">3.5</span>; <span class="comment">// 单精度</span></span><br><span class="line">    <span class="keyword">float</span> f2 = <span class="number">3.5f</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 布尔类型 boolean true真/false假</span></span><br><span class="line">    <span class="keyword">boolean</span> isPass = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isOK = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isBig = <span class="number">5</span> &gt; <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">if</span> (isPass) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;通过了&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;未通过&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 单字符</span></span><br><span class="line">    <span class="keyword">char</span> f = <span class="string">&#x27;女&#x27;</span>;</span><br><span class="line">    <span class="keyword">char</span> m = <span class="string">&#x27;男&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>【Java语言的整型常数默认为int型，浮点数默认是Double】</p>
-<h2 id="3、整型拓展"><a href="#3、整型拓展" class="headerlink" title="3、整型拓展"></a>3、整型拓展</h2><p>在计算机中存在很多进制问题，十进制，八进制，十六进制等，它们是如何表示的？</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">十进制整数，如：99, -500, 0。</span><br><span class="line"></span><br><span class="line">八进制整数，要求以 0 开头，如：015</span><br><span class="line"></span><br><span class="line">十六进制数，要求 0x 或 0X 开头，如：0x15 。</span><br></pre></td></tr></table></figure>
-
-<p>演示：</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//整型</span></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> i2=<span class="number">010</span>;</span><br><span class="line"><span class="keyword">int</span> i3=<span class="number">0x10</span>;</span><br><span class="line">System.out.println(i); <span class="comment">//10</span></span><br><span class="line">System.out.println(i2); <span class="comment">//8</span></span><br><span class="line">System.out.println(i3); <span class="comment">//16</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>java基础</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mybatis学习</title>
     <url>/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h1><h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><h2 id="1-1-什么是Mybatis"><a href="#1-1-什么是Mybatis" class="headerlink" title="1.1 什么是Mybatis"></a>1.1 什么是Mybatis</h2><p><img src="/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/blog\source_posts\Mybatis学习.assets\image-20210609201359175.png" alt="image-20210609201359175"></p>
+    <content><![CDATA[<h1 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h1><h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><h2 id="1-1-什么是Mybatis"><a href="#1-1-什么是Mybatis" class="headerlink" title="1.1 什么是Mybatis"></a>1.1 什么是Mybatis</h2><p><img src="/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/blog\source_posts\Mybatis学习\image-20210609201359175.png" alt="image-20210609201359175"></p>
 <span id="more"></span>
 
 <ul>
@@ -339,7 +257,7 @@
 <h2 id="4-7-生命周期和作用域"><a href="#4-7-生命周期和作用域" class="headerlink" title="4.7 生命周期和作用域"></a>4.7 生命周期和作用域</h2><p><strong>作用域 (Scope) 和生命周期</strong></p>
 <p>理解我们目前已经讨论过的不同作用域和生命周期类是至关重要的，因为错误的使用会导致非常严重的 并发问题。</p>
 <p>Mybatis的执行过程：</p>
-<img src="/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/blog\source\_posts\Mybatis学习.assets\image-20210610130132358.png" alt="image-20210610130132358" style="zoom:50%;">
+<img src="/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/blog\source\_posts\Mybatis学习\image-20210610130132358.png" alt="image-20210610130132358" style="zoom:50%;">
 
 <p><strong>作用域理解：</strong></p>
 <ul>
@@ -350,12 +268,94 @@
 <li>如果说 SqlSessionFactory 相当于数据库连接池，那么 SqlSession 就相当于一个数据库连接 （Connection 对象），你可以在一个事务里面执行多条 SQL，然后通过它的 commit、rollback 等方法，提交或者回滚事务。所以它应该存活在一个业务请求中，处理完整个请求后，应该关闭这 条连接，让它归还给 SqlSessionFactory，否则数据库资源就很快被耗费精光，系统就会瘫痪，所 以用 try…catch…finally… 语句来保证其正确关闭。</li>
 <li><strong>所以 SqlSession 的最佳的作用域是请求或方法作用域</strong>。</li>
 </ul>
-<img src="/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/blog\source\_posts\Mybatis学习.assets\image-20210610130436009.png" alt="image-20210610130436009" style="zoom:50%;">]]></content>
+<img src="/2021/06/11/Mybatis%E5%AD%A6%E4%B9%A0/blog\source\_posts\Mybatis学习\image-20210610130436009.png" alt="image-20210610130436009" style="zoom:50%;">]]></content>
       <categories>
         <category>java</category>
       </categories>
       <tags>
         <tag>Mybatis, SSM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础语法</title>
+    <url>/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>平时我们在编写时，在代码量比较少的时候，我们还可以看懂自己的代码，但是当项目结构一旦复杂起来，我们就需要用到注释，注释就类似于我们上学时候写的笔记，看着笔记就知道自己写的什么东西了！在程序中也是如此。下面代码就是Java中的注释：</p>
+<span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;sail967642@gmail.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/6/4 19:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        这是Java程序的主入口，</span></span><br><span class="line"><span class="comment">        main方法也是程序的主线程</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 输出Hello, world!</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello, world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注释并不会被执行，是给写代码的人看的，书写注释是一个非常好的习惯，在很多大公司都是强制要求编写注释！比如，BAT三巨头等等。。。</p>
+<p>Java中的注释有三种：</p>
+<p>单行注释：只能注释当前行，以//开始，直到行结束</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 输出Hello, world!</span></span><br></pre></td></tr></table></figure>
+
+<p>多行注释：注释一段文字，以/*开始，*/结束！</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">        这是Java程序的主入口，</span></span><br><span class="line"><span class="comment">        main方法也是程序的主线程</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>文档注释：用于生产API文档，配合JavaDoc。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * HelloWorld类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;sail967642@gmail.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 2021/6/4 19:56</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>平时写代码一定要注意注释的规范性，一个好的程序员，一定是有非常良好的编码习惯。</p>
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>每个人出生开始就有一个名字，生活中的所有事物都有名字，这名字是由造物主规定的，在程序中也不例外，谁生产出来的谁就规定名字。</p>
+<p>我们作为造物主，需要给所有的东西给上一个名字，比如我们的HelloWorld程序：</p>
+<p>HelloWorld是类名，也是我们的文件名。它前面的public class是关键字，不过是搞Java的人已经定好有特殊作用的，下面的每一个代码都有自己的意思和名字，就是用来区分的！和我们的名字一样，拿来被叫或者称呼的，程序一切都源于生活，一定要把学程序和生活中的一切联系起来，你会发现这一切都是息息相关的。</p>
+<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604201438853.png" alt="image-20210604201438853"></p>
+<p>下面是Java自己定义好的关键字：</p>
+<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604201548745.png" alt="image-20210604201548745"></p>
+<p>这些被Java已经规定的关键字，就不能拿来当作名字！</p>
+<p>Java所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。</p>
+<p>我们起名的要求：</p>
+<p>表示类名的标识符用大写字符开始。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">如：Man，GoodMan</span><br></pre></td></tr></table></figure>
+
+<p>表示方法和变量的标识符用小写字母开始，后面的描述性词以大写开始。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">如：eat(),eatFood()</span><br><span class="line"><span class="comment">//驼峰命名法</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>关于Java标识符，有以下几点需要注意：</strong></p>
+<ul>
+<li>所有的标识符都应该以字母（A-Z或者a-z）、美元符（$）、或者下划线（_）开始</li>
+<li>首字符之后可以是字母（A-Z或者a-z）、美元符（$）、下划线（_）或者数字的任何字符组合</li>
+<li>不能使用关键字作为变量名或方法名</li>
+<li>标识符是大小写敏感的</li>
+<li>合法标识符举例：age、$salary、_value、__1_value</li>
+<li>非法标识符举例：123abc、-salary、#abc</li>
+</ul>
+<p>【JAVA不采用通用语言使用的ASCII字符集，而是采用unicode这样的标准的国际字符集。因此，这里的字母的含义：可以表示英文、汉子等等。】</p>
+<p>【可以使用中文命名，但是一般不建议这样使用，也不建议使用拼音，很Low】</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String 王者荣耀 = <span class="string">&quot;最强王者&quot;</span>;</span><br><span class="line">        System.out.println(王者荣耀);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>Java是一种<strong>强类型语言</strong>，每个变量都必须声明其类型。</p>
+<h2 id="1、强弱类型语言"><a href="#1、强弱类型语言" class="headerlink" title="1、强弱类型语言"></a>1、强弱类型语言</h2><p><strong>强类型语言</strong>也被称为强类型定义语言。要求变量的使用要严格符合规定，所有变量都必须先定义才能使用。</p>
+<p>Java、,NET、C++等都是强制类型定义的。也就是说，一旦一个变量被指定了某个数据类型，如果不经过转换，那么它就永远是这个数据类型了。</p>
+<p>安全性高，运行效率相对较慢，鱼和熊掌不可兼得！强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。</p>
+<p>在VBScript中，可以将字符串‘12’和整数3进行连接得到字符串‘123’，也可以把它看成整数123，而不需要显示转换。十分随便</p>
+<p> 但其实它们的类型没有改变，VB只是在判断出一个表达式含有不同类型的变量之后，自动在这些变量前加了一个clong（）或（int）（）这样的转换函数而已。能做到这一点其实是归功于VB的编译器的 智能化而已，这并非是VB语言本身的长处或短处。</p>
+<h2 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h2><p>Java数据类型分为两大类：基本类型（primitive type）和引用类型（reference type）</p>
+<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604203643996.png" alt="image-20210604203643996"></p>
+<p>【注：引用数据类型的大小统一为4个字节，记录的是其引用对象的地址！】</p>
+<p><img src="/2021/06/04/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/blog\source_posts\java基础语法.assets\image-20210604203817866.png" alt="image-20210604203817866"></p>
+<p>JDK中类型对应的包装类都写好了，需要用到的时候直接看到。下面代码进行查看：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// byte</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：byte 二进制位数：&quot;</span> + Byte.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Byte&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Byte.MIN_VALUE=&quot;</span> + Byte.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Byte.MAX_VALUE=&quot;</span> + Byte.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// short</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：short 二进制位数：&quot;</span> + Short.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Short&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Short.MIN_VALUE=&quot;</span> + Short.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Short.MAX_VALUE=&quot;</span> + Short.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// int</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：int 二进制位数：&quot;</span> + Integer.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Integer.MIN_VALUE=&quot;</span> + Integer.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Integer.MAX_VALUE=&quot;</span> + Integer.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// long</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：long 二进制位数：&quot;</span> + Long.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Long&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Long.MIN_VALUE=&quot;</span> + Long.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Long.MAX_VALUE=&quot;</span> + Long.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// float</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：float 二进制位数：&quot;</span> + Float.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Float&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Float.MIN_VALUE=&quot;</span> + Float.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Float.MAX_VALUE=&quot;</span> + Float.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// double</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：double 二进制位数：&quot;</span> + Double.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Double&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Double.MIN_VALUE=&quot;</span> + Double.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Double.MAX_VALUE=&quot;</span> + Double.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">        <span class="comment">// char</span></span><br><span class="line">        System.out.println(<span class="string">&quot;基本类型：char 二进制位数：&quot;</span> + Character.SIZE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Character&quot;</span>);</span><br><span class="line">        <span class="comment">// 以数值形式而不是字符形式将Character.MIN_VALUE输出到控制台</span></span><br><span class="line">        System.out.println(<span class="string">&quot;最小值：Character.MIN_VALUE=&quot;</span> + (<span class="keyword">int</span>) Character.MIN_VALUE);</span><br><span class="line">        <span class="comment">// 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台</span></span><br><span class="line">        System.out.println(<span class="string">&quot;最大值：Character.MAX_VALUE=&quot;</span> + (<span class="keyword">int</span>) Character.MAX_VALUE);</span><br><span class="line">        System.out.println(<span class="string">&quot;包装类：java.lang.Integer&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>字节是什么：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">位（bit）：是计算机 内部数据 储存的最小单位，11001100是一个八位二进制数。</span><br><span class="line">字节（byte）：是计算机中 数据处理 的基本单位，习惯上用大写 B 来表示, 1B（byte,字节）= 8bit（位）</span><br><span class="line">字符：是指计算机中使用的字母、数字、字和符号</span><br><span class="line">ASCIIS码： </span><br><span class="line">	1个英文字母（不分大小写）= 1个字节的空间</span><br><span class="line">	1个中文汉字 = 2个字节的空间</span><br><span class="line">	1个ASCII码 = 一个字节</span><br><span class="line">UTF-8编码： </span><br><span class="line">	1个英文字符 = 1个字节</span><br><span class="line">	英文标点 = 1个字节 </span><br><span class="line">	1个中文（含繁体） = 3个字节</span><br><span class="line">	中文标点 = 3个字节</span><br><span class="line">Unicode编码： </span><br><span class="line">	1个英文字符 = 2个字节</span><br><span class="line">	英文标点 = 2个字节</span><br><span class="line">	1个中文（含繁体） = 2个字节</span><br><span class="line">	中文标点 = 2个字节</span><br><span class="line">	</span><br><span class="line">	1bit表示1位</span><br><span class="line">	1Byte表示一个字节 1B=8b</span><br><span class="line">	1024B=1KB</span><br><span class="line">	1024KB=1M</span><br><span class="line">	1024M=1G</span><br></pre></td></tr></table></figure>
+
+<p>【下面，自己定义一些变量来看】</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 整数</span></span><br><span class="line">    <span class="keyword">int</span> i1 = <span class="number">100</span>;</span><br><span class="line">    <span class="comment">// 长整数</span></span><br><span class="line">    <span class="keyword">long</span> i2 = <span class="number">998877665544332211L</span>;</span><br><span class="line">    <span class="comment">// 短整数</span></span><br><span class="line">    <span class="keyword">short</span> i3 = <span class="number">235</span>;</span><br><span class="line">    <span class="comment">// 浮点型</span></span><br><span class="line">    <span class="keyword">double</span> d1 = <span class="number">3.5</span>; <span class="comment">// 双精度</span></span><br><span class="line">    <span class="keyword">double</span> d2 = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">float</span> f1 = (<span class="keyword">float</span>) <span class="number">3.5</span>; <span class="comment">// 单精度</span></span><br><span class="line">    <span class="keyword">float</span> f2 = <span class="number">3.5f</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 布尔类型 boolean true真/false假</span></span><br><span class="line">    <span class="keyword">boolean</span> isPass = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isOK = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">boolean</span> isBig = <span class="number">5</span> &gt; <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">if</span> (isPass) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;通过了&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;未通过&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 单字符</span></span><br><span class="line">    <span class="keyword">char</span> f = <span class="string">&#x27;女&#x27;</span>;</span><br><span class="line">    <span class="keyword">char</span> m = <span class="string">&#x27;男&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>【Java语言的整型常数默认为int型，浮点数默认是Double】</p>
+<h2 id="3、整型拓展"><a href="#3、整型拓展" class="headerlink" title="3、整型拓展"></a>3、整型拓展</h2><p>在计算机中存在很多进制问题，十进制，八进制，十六进制等，它们是如何表示的？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">十进制整数，如：99, -500, 0。</span><br><span class="line"></span><br><span class="line">八进制整数，要求以 0 开头，如：015</span><br><span class="line"></span><br><span class="line">十六进制数，要求 0x 或 0X 开头，如：0x15 。</span><br></pre></td></tr></table></figure>
+
+<p>演示：</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//整型</span></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> i2=<span class="number">010</span>;</span><br><span class="line"><span class="keyword">int</span> i3=<span class="number">0x10</span>;</span><br><span class="line">System.out.println(i); <span class="comment">//10</span></span><br><span class="line">System.out.println(i2); <span class="comment">//8</span></span><br><span class="line">System.out.println(i3); <span class="comment">//16</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>
